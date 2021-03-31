@@ -1,7 +1,9 @@
 import {Cabecalho,Titulo,Entrada} from "./styles";
-import {Imagem,Botao} from "../../styles"
+import { useRouter } from "next/router";
+import {FaUserAlt} from "react-icons/fa"
 
 const Header = () => {
+    const router = useRouter();
 
     return (
         <>
@@ -10,9 +12,8 @@ const Header = () => {
             <Cabecalho>
                 <Titulo href="/">Seriable</Titulo>
                 <nav>
-                    <div className="flex">
-                        <Entrada type="text" name="pesquisar" required placeholder="Pesquisar"/>
-                        <Botao type="submit"><Imagem src="/img/pesquisar.png" alt="icone de lupa" size="sm"/></Botao>
+                    <div>
+                        <FaUserAlt size={40} onClick={() => router.push("https://seriableadmin.vercel.app/")} />
                     </div>
                 </nav>
         </Cabecalho>
